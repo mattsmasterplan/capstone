@@ -1,4 +1,6 @@
 
-Link to Angular calendar component:
-
+Angular calendar component:
 https://mattlewis92.github.io/angular-calendar/#/kitchen-sink
+
+How to deploy an angular application to github:
+https://dzone.com/articles/how-to-deploy-an-angular-application-to-github
