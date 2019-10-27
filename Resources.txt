@@ -4,3 +4,6 @@ https://mattlewis92.github.io/angular-calendar/#/kitchen-sink
 
 How to deploy an angular application to github:
 https://dzone.com/articles/how-to-deploy-an-angular-application-to-github
+
+Getting data from POST request in PHP:
+https://codeforgeek.com/angular-post-request-php/
