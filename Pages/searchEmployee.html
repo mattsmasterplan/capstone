@@ -10,11 +10,15 @@
 <form>
   <h2>Lookup Employee</h2>
 
+  <!-- When the page loads, display a table of all employee schedules -->
+
   <label for="startTime">Choose a start time: </label>
   <input id="startTime" type="time" name="start" value="13:30"><br />
 
   <label for="startTime">Choose an end time: </label>
   <input id="endTime" type="time" name="end" value="23:30"><br />
+
+  <input type="submit" name="search" value="Search">
 
   <script type="text/javascript">
     document.write("Put table of results here" + <br />);
