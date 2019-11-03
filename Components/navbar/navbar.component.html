@@ -1,0 +1,38 @@
+<mat-toolbar color="primary">
+    <div fxShow="true" fxHide.gt-sm="true">
+      <button mat-icon-button (click)="sidenav.toggle()">
+        <mat-icon>menu</mat-icon>
+      </button>
+    </div>
+    <a mat-button routerLink="/">
+      <span>Schedulfy</span>
+    </a>
+    <span class="example-spacer"></span>
+    <div fxShow="true" fxHide.lt-md="true">
+      <span style="padding-right: 40px;">Bob Cheeseman</span>
+      <a mat-button routerLink="/add-employee">Logout</a>
+    </div>
+  </mat-toolbar>
+  <mat-sidenav-container fxFlexFill class="example-container">
+    <mat-sidenav
+      color="primary"
+      #sidenav
+      fxLayout="column"
+      mode="over"
+      opened="false"
+      fxHide.gt-sm="true"
+    >
+      <div fxLayout="column">
+        <!-- if permission level is 2 -->
+        <a mat-button routerLink="/add-employee">Add User</a>
+
+        <a mat-button routerLink="/add-employee">Manage Users</a>
+        <!-- if permission level is 1 -->
+        <a mat-button routerLink="/add-employee">Profile</a>
+        <a mat-button routerLink="/add-employee">Calendar</a>
+      </div>
+    </mat-sidenav>
+    <mat-sidenav-content fxFlexFill>
+      Awesome content
+    </mat-sidenav-content>
+  </mat-sidenav-container>

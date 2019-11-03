@@ -1,0 +1,118 @@
+<form [formGroup]="addEmployeeForm" novalidate (ngSubmit)="onSubmit()">
+  <mat-card class="shipping-card">
+    <mat-card-header>
+      <mat-card-title>Add Employee</mat-card-title>
+    </mat-card-header>
+    <mat-card-content>
+      <div class="row">
+        <div class="col"><h3>Name</h3></div>
+      </div>
+      <div class="row">
+        <div class="col">
+          <mat-form-field class="full-width">
+            <input matInput placeholder="First" formControlName="firstName" />
+            <mat-error
+              *ngIf="addEmployeeForm.controls['firstName'].hasError('required')"
+            >
+              First name is <strong>required</strong>
+            </mat-error>
+          </mat-form-field>
+        </div>
+
+        <div class="col">
+          <mat-form-field class="full-width">
+            <input matInput placeholder="Last" formControlName="lastName" />
+            <mat-error
+              *ngIf="addEmployeeForm.controls['lastName'].hasError('required')"
+            >
+              Last name is <strong>required</strong>
+            </mat-error>
+          </mat-form-field>
+        </div>
+      </div>
+
+      <div class="row">
+        <div class="col"><h3>Login</h3></div>
+      </div>
+      <div class="row">
+        <div class="col">
+          <mat-form-field class="half-width">
+            <input matInput placeholder="Username" formControlName="userName" />
+            <mat-error
+              *ngIf="addEmployeeForm.controls['userName'].hasError('required')"
+            >
+              Username is <strong>required</strong>
+            </mat-error>
+          </mat-form-field>
+        </div>
+      </div>
+      <div class="row">
+        <div class="col">
+          <mat-form-field class="half-width">
+            <input matInput placeholder="Password" formControlName="password" />
+            <mat-error
+              *ngIf="addEmployeeForm.controls['password'].hasError('required')"
+            >
+              Password is <strong>required</strong>
+            </mat-error>
+          </mat-form-field>
+        </div>
+      </div>
+
+      <div class="row">
+        <div class="col"><h3>Position</h3></div>
+      </div>
+      <div class="row">
+        <div class="col">
+          <mat-radio-group
+            aria-labelledby=""
+            class=""
+            formControlName="position"
+          >
+            <mat-radio-button
+              class="example-radio-button"
+              *ngFor="let position of positions"
+              [value]="position"
+            >
+              {{ position }}
+            </mat-radio-button>
+          </mat-radio-group>
+        </div>
+      </div>
+      <div class="row">
+        <div class="col"><h3>Contact</h3></div>
+      </div>
+      <div class="row">
+        <div class="col">
+          <mat-form-field class="half-width">
+            <input matInput placeholder="Email" formControlName="email" />
+            <mat-error
+              *ngIf="addEmployeeForm.controls['email'].hasError('required')"
+            >
+              Email is <strong>required</strong>
+            </mat-error>
+          </mat-form-field>
+        </div>
+      </div>
+      <div class="row">
+        <div class="col">
+          <mat-form-field class="half-width">
+            <input
+              matInput
+              placeholder="Phone Number"
+              formControlName="phone"
+            />
+            <mat-error
+              *ngIf="addEmployeeForm.controls['phone'].hasError('required')"
+            >
+              Phone Number is <strong>required</strong>
+            </mat-error>
+          </mat-form-field>
+        </div>
+      </div>
+    </mat-card-content>
+    <mat-card-actions>
+      <button mat-raised-button color="primary" type="submit">Submit</button>
+    </mat-card-actions>
+  </mat-card>
+</form>
