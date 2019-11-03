@@ -15,6 +15,11 @@
   <input type="text" name="firstName"><br>
   Last name:<br>
   <input type="text" name="lastName"><br>
+  Email address:<br>
+  <input type="text" name="email"><br>
+  Phone number:<br>
+  <input type="text" name="phone"><br>
+
   <fieldset>
     <legend>Job title</legend>
     <input type="radio" name="job" value="associate">Associate<br>
@@ -22,10 +27,53 @@
     <input type="radio" name="job" value="storeManager">Store Manager<br>
     <input type="radio" name="job" value="districtManager">District Manager<br>
   </fieldset>
-  Email address:<br>
-  <input type="text" name="email"><br>
-  Phone number:<br>
-  <input type="text" name="phone"><br>
+
+  <fieldset>
+    <legend>Schedule</legend>
+    <table>
+    <tr>
+      <th>Day</th>
+      <th>Start time</th>
+      <th>End time</th>
+    </tr>
+    <tr>
+      <td>Sunday</td>
+      <td><input type="datetime" name="SuStart"></td>
+      <td><input type="datetime" name="SuEnd"></td>
+    </tr>
+    <tr>
+      <td>Monday</td>
+      <td><input type="datetime" name="MStart"></td>
+      <td><input type="datetime" name="MEnd"></td>
+    </tr>
+    <tr>
+      <td>Tuesday</td>
+      <td><input type="datetime" name="TuStart"></td>
+      <td><input type="datetime" name="TuEnd"></td>
+    </tr>
+    <tr>
+      <td>Wednesday</td>
+      <td><input type="datetime" name="WStart"></td>
+      <td><input type="datetime" name="WEnd"></td>
+    </tr>
+    <tr>
+      <td>Thursday</td>
+      <td><input type="datetime" name="ThStart"></td>
+      <td><input type="datetime" name="ThEnd"></td>
+    </tr>
+    <tr>
+      <td>Friday</td>
+      <td><input type="datetime" name="FStart"></td>
+      <td><input type="datetime" name="FEnd"></td>
+    </tr>
+    <tr>
+      <td>Saturday</td>
+      <td><input type="datetime" name="SaStart"></td>
+      <td><input type="datetime" name="SaEnd"></td>
+    </tr>
+  </table>
+</fieldset>
+
   <input type="submit" name="submit" value="Submit">
 
 
