@@ -2,11 +2,11 @@
 Angular calendar component:
 https://mattlewis92.github.io/angular-calendar/#/kitchen-sink
 
-How to deploy an angular application to github pages:
-https://dzone.com/articles/how-to-deploy-an-angular-application-to-github
-
 Getting data from POST request in PHP:
 https://codeforgeek.com/angular-post-request-php/
 
 Database naming conventions:
 https://launchbylunch.com/posts/2014/Feb/16/sql-naming-conventions/
+
+PHP MySql login system:
+https://www.tutorialrepublic.com/php-tutorial/php-mysql-login-system.php
