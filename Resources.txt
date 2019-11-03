@@ -13,3 +13,9 @@ https://www.tutorialrepublic.com/php-tutorial/php-mysql-login-system.php
 
 Angular Material Design Navbar setup:
 https://www.techiediaries.com/angular-material-navigation-toolbar-sidenav/
+
+The right way to prefetch data for Angular components:
+https://codeburst.io/the-right-way-to-prefetch-data-for-your-angular-components-pages-1e5cce099cee
+
+Angular Material data table:
+https://medium.com/codingthesmartway-com-blog/angular-material-part-4-data-table-23874582f23a
