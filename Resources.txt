@@ -10,3 +10,6 @@ https://launchbylunch.com/posts/2014/Feb/16/sql-naming-conventions/
 
 PHP MySql login system:
 https://www.tutorialrepublic.com/php-tutorial/php-mysql-login-system.php
+
+Angular Material Design Navbar setup:
+https://www.techiediaries.com/angular-material-navigation-toolbar-sidenav/
