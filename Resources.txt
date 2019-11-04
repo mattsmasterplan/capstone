@@ -19,3 +19,9 @@ https://codeburst.io/the-right-way-to-prefetch-data-for-your-angular-components-
 
 Angular Material data table:
 https://medium.com/codingthesmartway-com-blog/angular-material-part-4-data-table-23874582f23a
+
+Angular form validation:
+https://code-maze.com/angular-material-form-validation/
+
+Clearing Angular forms:
+https://atom-morgan.github.io/angular-clearing-forms/
