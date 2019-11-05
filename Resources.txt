@@ -1,6 +1,6 @@
 
 Angular calendar component:
-https://mattlewis92.github.io/angular-calendar/#/kitchen-sink
+https://fullcalendar.io/docs/angular
 
 Getting data from POST request in PHP:
 https://codeforgeek.com/angular-post-request-php/
