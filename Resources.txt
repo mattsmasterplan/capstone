@@ -1,6 +1,7 @@
 
 Angular calendar component:
 https://fullcalendar.io/docs/angular
+https://medium.com/aubergine-solutions/how-to-integrate-jquery-fullcalendar-in-angular-c35728cfeeb2
 
 Getting data from POST request in PHP:
 https://codeforgeek.com/angular-post-request-php/
@@ -25,3 +26,6 @@ https://code-maze.com/angular-material-form-validation/
 
 Clearing Angular forms:
 https://atom-morgan.github.io/angular-clearing-forms/
+
+Angular Material Dialog:
+https://blog.angular-university.io/angular-material-dialog/
