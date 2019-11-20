@@ -1,0 +1,52 @@
+<h1 mat-dialog-title align="center">Request time off:</h1>
+<div mat-dialog-content [formGroup]="createRequestForm" align="center">
+  <!-- <ng-container *ngFor="let opt of requestOptions">
+
+    <mat-radio-group
+      formControlName="timeOfDay"
+      name="requestTypeOptions"
+      aria-label="Select an option"
+    >
+      <mat-radio-button [value]="opt">{{ opt }}</mat-radio-button>
+      <br />
+    </mat-radio-group>
+  </ng-container> -->
+
+  <mat-form-field>
+    <input
+      matInput
+      formControlName="requestStartTime"
+      type="time"
+      placeholder="Start"
+    />
+  </mat-form-field>
+
+  <mat-form-field>
+    <input
+      matInput
+      formControlName="requestEndTime"
+      type="time"
+      placeholder="End"
+    />
+  </mat-form-field>
+
+  <mat-form-field>
+    <textarea
+      matInput
+      formControlName="description"
+      matTextareaAutosize
+      placeholder="Description (optional)"
+    ></textarea>
+  </mat-form-field>
+</div>
+
+<div mat-dialog-actions align="center">
+  <button
+    class="mat-raised-button mat-primary"
+    [disabled]="!createRequestForm.valid"
+    (click)="save()"
+  >
+    Submit
+  </button>
+  <button class="mat-raised-button" (click)="close()">Cancel</button>
+</div>

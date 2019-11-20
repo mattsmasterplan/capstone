@@ -1,4 +1,4 @@
-import { Component } from "@angular/core";
+import { Component, ViewChild } from "@angular/core";
 import { FormBuilder, Validators } from "@angular/forms";
 import { HttpClient } from "@angular/common/http";
 
@@ -14,6 +14,20 @@ export class AddEmployeeFormComponent {
     userName: [null, Validators.required],
     password: [null, Validators.required],
     position: [null, Validators.required],
+    monStartAvail: [null],
+    monEndAvail: [null],
+    tuesStartAvail: [null],
+    tuesEndAvail: [null],
+    wedStartAvail: [null],
+    wedEndAvail: [null],
+    thursStartAvail: [null],
+    thursEndAvail: [null],
+    friStartAvail: [null],
+    friEndAvail: [null],
+    satStartAvail: [null],
+    satEndAvail: [null],
+    sunStartAvail: [null],
+    sunEndAvail: [null],
     email: [null, Validators.required],
     phone: [null, Validators.required]
   });
@@ -25,31 +39,41 @@ export class AddEmployeeFormComponent {
     "District Manager - permission level 1"
   ];
 
+  @ViewChild("addEmpForm", { static: false }) formValues: {
+    resetForm: () => void;
+  };
+
   constructor(private fb: FormBuilder, private http: HttpClient) {}
 
-  onSubmit() {
-    //alert(this.addEmployeeForm.get("firstName").value);
 
-    let formObj = this.addEmployeeForm.getRawValue();
-    let serializedForm = JSON.stringify(formObj);
+  // PROD
+  // private addEmployeeUrl = "/capstone-testing/api/addNewEmployee.php";
+  // Dev
+  private addEmployeeUrl = "http://localhost/api/addNewEmployee.php";
+
+
+  // Submitting add new employee form
+  onSubmit() {
+
+    // Serialize form values for http request
+    let serializedForm = JSON.stringify(this.addEmployeeForm.getRawValue());
 
     // Send Http request
-
-    // POST PATH FOR PROD
-    // this.http
-    //   .post(
-    //     '/capstone-testing/api/addNewEmployee.php',
-    //     serializedForm
-    //   )
-    //   .subscribe(responseData => {
-    //     console.log(responseData);
-    //   });
-
-    // POST PATH FOR DEV
     this.http
-      .post("http://localhost/api/addNewEmployee.php", serializedForm)
-      .subscribe(responseData => {
-        console.log(responseData);
-      });
+      .post(`${this.addEmployeeUrl}`, serializedForm)
+      .subscribe(
+        responseData => {
+          console.log(responseData);
+          // Clear form after submit
+          this.formValues.resetForm();
+        },
+        err => {
+          console.log(err);
+        }
+      );
+  }
+
+  public onCancel() {
+    this.formValues.resetForm();
   }
 }

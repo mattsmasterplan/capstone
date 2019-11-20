@@ -1,4 +1,8 @@
-<form [formGroup]="addEmployeeForm" novalidate (ngSubmit)="onSubmit()">
+<form
+  #addEmpForm="ngForm"
+  [formGroup]="addEmployeeForm"
+  (ngSubmit)="onSubmit()"
+>
   <mat-card class="shipping-card">
     <mat-card-header>
       <mat-card-title>Add Employee</mat-card-title>
@@ -79,9 +83,179 @@
           </mat-radio-group>
         </div>
       </div>
+
+      <div class="row">
+        <div class="col"><h3>Availability</h3></div>
+      </div>
+
+      <div class="row">
+        <div class="col">
+          <mat-form-field>
+            <input
+              type="time"
+              matInput
+              placeholder="Monday starting availability"
+              formControlName="monStartAvail"
+            />
+          </mat-form-field>
+        </div>
+
+        <div class="col">
+          <mat-form-field>
+            <input
+              type="time"
+              matInput
+              placeholder="Monday ending availability"
+              formControlName="monEndAvail"
+            />
+          </mat-form-field>
+        </div>
+      </div>
+      <div class="row">
+        <div class="col">
+          <mat-form-field>
+            <input
+              type="time"
+              matInput
+              placeholder="Tuesday starting availability"
+              formControlName="tuesStartAvail"
+            />
+          </mat-form-field>
+        </div>
+
+        <div class="col">
+          <mat-form-field>
+            <input
+              type="time"
+              matInput
+              placeholder="Tuesday ending availability"
+              formControlName="tuesEndAvail"
+            />
+          </mat-form-field>
+        </div>
+      </div>
+      <div class="row">
+        <div class="col">
+          <mat-form-field>
+            <input
+              type="time"
+              matInput
+              placeholder="Wednesday starting availability"
+              formControlName="wedStartAvail"
+            />
+          </mat-form-field>
+        </div>
+
+        <div class="col">
+          <mat-form-field>
+            <input
+              type="time"
+              matInput
+              placeholder="Wednesday ending availability"
+              formControlName="wedEndAvail"
+            />
+          </mat-form-field>
+        </div>
+      </div>
+      <div class="row">
+        <div class="col">
+          <mat-form-field>
+            <input
+              type="time"
+              matInput
+              placeholder="Thursday starting availability"
+              formControlName="thursStartAvail"
+            />
+          </mat-form-field>
+        </div>
+
+        <div class="col">
+          <mat-form-field>
+            <input
+              type="time"
+              matInput
+              placeholder="Thursday ending availability"
+              formControlName="thursEndAvail"
+            />
+          </mat-form-field>
+        </div>
+      </div>
+      <div class="row">
+        <div class="col">
+          <mat-form-field>
+            <input
+              type="time"
+              matInput
+              placeholder="Friday starting availability"
+              formControlName="friStartAvail"
+            />
+          </mat-form-field>
+        </div>
+
+        <div class="col">
+          <mat-form-field>
+            <input
+              type="time"
+              matInput
+              placeholder="Friday ending availability"
+              formControlName="friEndAvail"
+            />
+          </mat-form-field>
+        </div>
+      </div>
+      <div class="row">
+        <div class="col">
+          <mat-form-field>
+            <input
+              type="time"
+              matInput
+              placeholder="Saturday starting availability"
+              formControlName="satStartAvail"
+            />
+          </mat-form-field>
+        </div>
+
+        <div class="col">
+          <mat-form-field>
+            <input
+              type="time"
+              matInput
+              placeholder="Saturday ending availability"
+              formControlName="satEndAvail"
+            />
+          </mat-form-field>
+        </div>
+      </div>
+
+      <div class="row">
+        <div class="col">
+          <mat-form-field>
+            <input
+              type="time"
+              matInput
+              placeholder="Sunday starting availability"
+              formControlName="sunStartAvail"
+            />
+          </mat-form-field>
+        </div>
+
+        <div class="col">
+          <mat-form-field>
+            <input
+              type="time"
+              matInput
+              placeholder="Sunday ending availability"
+              formControlName="sunEndAvail"
+            />
+          </mat-form-field>
+        </div>
+      </div>
+
+      <!-- TODO: make phone and email inputs strict type -->
       <div class="row">
         <div class="col"><h3>Contact</h3></div>
       </div>
+
       <div class="row">
         <div class="col">
           <mat-form-field class="half-width">
@@ -112,7 +286,16 @@
       </div>
     </mat-card-content>
     <mat-card-actions>
-      <button mat-raised-button color="primary" type="submit">Submit</button>
+      <button
+        mat-raised-button
+        color="primary"
+        [disabled]="!addEmployeeForm.valid"
+      >
+        Submit
+      </button>
+      <button type="button" mat-raised-button color="warn" (click)="onCancel()">
+        Cancel
+      </button>
     </mat-card-actions>
   </mat-card>
 </form>

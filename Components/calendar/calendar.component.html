@@ -1,0 +1,12 @@
+<div #calendar id="calendar-container">
+  <full-calendar
+    id="calendar"
+    defaultView="dayGridMonth"
+    selectable="true"
+    [plugins]="calendarPlugins"
+    (dateClick)="dateClick($event)"
+    [events]="eventData"
+    (eventClick)="eventClick($event)"
+    height="parent"
+  ></full-calendar>
+</div>

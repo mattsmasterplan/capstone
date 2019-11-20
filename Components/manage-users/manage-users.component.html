@@ -1,0 +1,45 @@
+<div><h2>Manage Users</h2></div>
+<div>
+  <mat-table [dataSource]="dataSource">
+    <ng-container matColumnDef="id">
+      <mat-header-cell *matHeaderCellDef> ID </mat-header-cell>
+      <mat-cell *matCellDef="let user"> {{ user.id }} </mat-cell>
+    </ng-container>
+
+    <ng-container matColumnDef="firstName">
+      <mat-header-cell *matHeaderCellDef> First name </mat-header-cell>
+      <mat-cell *matCellDef="let user">
+        <div>
+          <label class="block bold">{{ user.first_name }}</label>
+        </div>
+      </mat-cell>
+    </ng-container>
+
+    <ng-container matColumnDef="lastName">
+      <mat-header-cell *matHeaderCellDef> Last name </mat-header-cell>
+      <mat-cell *matCellDef="let user"> {{ user.last_name }} </mat-cell>
+    </ng-container>
+    <ng-container matColumnDef="position">
+      <mat-header-cell *matHeaderCellDef> Position </mat-header-cell>
+      <mat-cell *matCellDef="let user"> {{ user.position }} </mat-cell>
+    </ng-container>
+    <ng-container matColumnDef="email">
+      <mat-header-cell *matHeaderCellDef> Email </mat-header-cell>
+      <mat-cell *matCellDef="let user"> {{ user.email }} </mat-cell>
+    </ng-container>
+    <ng-container matColumnDef="phone">
+      <mat-header-cell *matHeaderCellDef> Phone </mat-header-cell>
+      <mat-cell *matCellDef="let user"> {{ user.phone }} </mat-cell>
+    </ng-container>
+    <ng-container matColumnDef="manage">
+      <mat-header-cell *matHeaderCellDef> Manage </mat-header-cell>
+      <mat-cell *matCellDef="let user">
+        <button mat-stroked-button color="warn" (click)="removeUser(user)">
+          Remove
+        </button>
+      </mat-cell>
+    </ng-container>
+    <mat-header-row *matHeaderRowDef="displayedColumns"></mat-header-row>
+    <mat-row *matRowDef="let row; columns: displayedColumns"></mat-row>
+  </mat-table>
+</div>

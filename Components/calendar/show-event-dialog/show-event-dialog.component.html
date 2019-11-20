@@ -1,0 +1,29 @@
+<h2 mat-dialog-title>{{ data.title }}</h2>
+<mat-dialog-content>
+  <mat-list>
+    <mat-list-item
+      ><b>Request start:</b
+      ><span style="padding-left: 15px;">{{
+        data.start | date: "short"
+      }}</span></mat-list-item
+    >
+    <mat-list-item
+      ><b>Request end:</b
+      ><span style="padding-left: 15px;">{{
+        data.end | date: "short"
+      }}</span></mat-list-item
+    >
+    <mat-list-item
+      ><b>Description:</b
+      ><span *ngIf="data.description" style="padding-left: 15px;">{{
+        data.description
+      }}</span>
+      <span *ngIf="!data.description" style="padding-left: 15px;">none</span></mat-list-item
+    >
+  </mat-list>
+</mat-dialog-content>
+
+<mat-dialog-actions>
+  <button mat-raised-button (click)="close()">Close</button>
+  <button mat-raised-button color="warn" (click)="deleteRequest(data.request_id)">Delete request</button>
+</mat-dialog-actions>
