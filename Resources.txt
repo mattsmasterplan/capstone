@@ -29,3 +29,6 @@ https://atom-morgan.github.io/angular-clearing-forms/
 
 Angular Material Dialog:
 https://blog.angular-university.io/angular-material-dialog/
+
+MSDN Spread Operator (...):
+https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Operators/Spread_syntax
