@@ -1,3 +1,4 @@
+import { PhonePipe } from "./../services/phone.pipe";
 import { BrowserModule } from "@angular/platform-browser";
 import { NgModule } from "@angular/core";
 import { FormsModule, ReactiveFormsModule } from "@angular/forms";
@@ -41,12 +42,12 @@ import { ShowEmployeesComponent } from "./show-employees/show-employees.componen
 import { UserService } from "../services/user.service";
 import { FullCalendarModule } from "@fullcalendar/angular";
 import { CreateEventDialogComponent } from "./calendar/create-event-dialog/create-event-dialog.component";
-import { ShowEventDialogComponent } from './calendar/show-event-dialog/show-event-dialog.component';
+import { ShowEventDialogComponent } from "./calendar/show-event-dialog/show-event-dialog.component";
 
 const appRoutes: Routes = [
   { path: "", component: CalendarComponent },
-  { path: "add-user", component: AddEmployeeFormComponent },
   { path: "manage-users", component: ManageUsersComponent },
+  { path: "manage-users/add-user", component: AddEmployeeFormComponent },
   { path: "profile", component: ProfileComponent },
   { path: "calendar", component: CalendarComponent }
 ];
@@ -61,7 +62,8 @@ const appRoutes: Routes = [
     ProfileComponent,
     CalendarComponent,
     CreateEventDialogComponent,
-    ShowEventDialogComponent
+    ShowEventDialogComponent,
+    PhonePipe
   ],
   imports: [
     BrowserModule,
@@ -92,6 +94,7 @@ const appRoutes: Routes = [
   providers: [
     UserService,
     MatDialog,
+    PhonePipe,
     {
       provide: MatDialogRef,
       useValue: {}

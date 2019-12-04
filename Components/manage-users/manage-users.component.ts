@@ -40,6 +40,8 @@ export class ManageUsersComponent implements OnInit {
     "position",
     "email",
     "phone",
+    "username",
+    "permission",
     "manage"
   ];
 

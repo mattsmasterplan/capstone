@@ -1,1 +1,39 @@
-<p>profile works!</p>
+<mat-card>
+  <h2 mat-card-title>{{ this.username }}'s profile</h2>
+  <mat-card-content>
+    <mat-list>
+      <mat-list-item
+        ><b>Name:</b
+        ><span style="padding-left: 15px;"
+          >{{ this.first_name }} {{ this.last_name }}</span
+        ></mat-list-item
+      >
+      <mat-list-item
+        ><b>Username:</b
+        ><span style="padding-left: 15px;">{{ this.username }}</span>
+      </mat-list-item>
+      <mat-list-item
+        ><b>Position:</b
+        ><span style="padding-left: 15px;">{{
+          this.position
+        }}</span></mat-list-item
+      >
+      <mat-list-item
+        ><b>Email:</b
+        ><span style="padding-left: 15px;">{{
+          this.email
+        }}</span></mat-list-item
+      >
+      <mat-list-item
+        ><b>Phone:</b
+        ><span style="padding-left: 15px;">{{
+          this.phone | phone: "US"
+        }}</span></mat-list-item
+      >
+    </mat-list>
+
+    <button mat-raised-button color="warn" (click)="logoutUser()">
+      Logout
+    </button>
+  </mat-card-content>
+</mat-card>

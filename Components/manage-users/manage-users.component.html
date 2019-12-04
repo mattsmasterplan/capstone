@@ -1,4 +1,9 @@
 <div><h2>Manage Users</h2></div>
+
+<div>
+  <button mat-raised-button routerLink="add-user">Add User</button>
+</div>
+
 <div>
   <mat-table [dataSource]="dataSource">
     <ng-container matColumnDef="id">
@@ -29,7 +34,20 @@
     </ng-container>
     <ng-container matColumnDef="phone">
       <mat-header-cell *matHeaderCellDef> Phone </mat-header-cell>
-      <mat-cell *matCellDef="let user"> {{ user.phone }} </mat-cell>
+      <mat-cell *matCellDef="let user">
+        {{ user.phone | phone: "US" }}
+      </mat-cell>
+    </ng-container>
+    <ng-container matColumnDef="username">
+      <mat-header-cell *matHeaderCellDef> Username </mat-header-cell>
+      <mat-cell *matCellDef="let user"> {{ user.username }} </mat-cell>
+    </ng-container>
+    <ng-container matColumnDef="permission">
+      <mat-header-cell *matHeaderCellDef> Permission </mat-header-cell>
+      <mat-cell *matCellDef="let user">
+        <span *ngIf="user.permission == 1">Admin</span>
+        <span *ngIf="user.permission == 0">User</span>
+      </mat-cell>
     </ng-container>
     <ng-container matColumnDef="manage">
       <mat-header-cell *matHeaderCellDef> Manage </mat-header-cell>

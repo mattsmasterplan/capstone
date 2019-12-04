@@ -33,10 +33,11 @@ export class AddEmployeeFormComponent {
   });
 
   positions: string[] = [
-    "Associate - permission level 4",
-    "Shift Leader - permission level 3",
-    "Store Manager - permission level 2",
-    "District Manager - permission level 1"
+    "Insider",
+    "Driver",
+    "Shift Leader",
+    "Store Manager",
+    "District Manager"
   ];
 
   @ViewChild("addEmpForm", { static: false }) formValues: {
@@ -47,9 +48,9 @@ export class AddEmployeeFormComponent {
 
 
   // PROD
-  // private addEmployeeUrl = "/capstone-testing/api/addNewEmployee.php";
+   private addEmployeeUrl = "/capstone-testing/api/addNewEmployee.php";
   // Dev
-  private addEmployeeUrl = "http://localhost/api/addNewEmployee.php";
+  //private addEmployeeUrl = "http://localhost/api/addNewEmployee.php";
 
 
   // Submitting add new employee form
@@ -63,7 +64,7 @@ export class AddEmployeeFormComponent {
       .post(`${this.addEmployeeUrl}`, serializedForm)
       .subscribe(
         responseData => {
-          console.log(responseData);
+         // console.log(responseData);
           // Clear form after submit
           this.formValues.resetForm();
         },

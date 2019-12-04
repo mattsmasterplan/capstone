@@ -4,13 +4,8 @@
       <mat-icon>menu</mat-icon>
     </button>
   </div>
-  <a mat-button routerLink="/">
-    <span>Schedulfy</span>
-  </a>
-  <span class="example-spacer"></span>
-  <div fxShow="true" fxHide.lt-md="true">
-    <span style="padding-right: 40px;">Bob Cheeseman</span>
-    <a mat-button routerLink="add-employee">Logout</a>
+  <div>
+    <img src="/capstone-testing/20050.png" alt="Schedulfy" />
   </div>
 </mat-toolbar>
 <mat-sidenav-container fxFlexFill class="example-container">
@@ -23,10 +18,11 @@
     fxHide.gt-sm="true"
   >
     <div fxLayout="column">
-      <!-- if permission level is 2 -->
-      <a mat-button routerLink="add-user">Add User</a>
-      <a mat-button routerLink="manage-users">Manage Users</a>
-      <!-- if permission level is 1 -->
+      <!-- if permission level is Admin -->
+      <a mat-button *ngIf="this.permission == 1" routerLink="manage-users"
+        >Manage Users</a
+      >
+      <!-- if permission level is User -->
       <a mat-button routerLink="profile">Profile</a>
       <a mat-button routerLink="calendar">Calendar</a>
     </div>
